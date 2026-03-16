@@ -25,14 +25,22 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] Describe the game's purpose.
+   - This is a simple game in which presents the user with guessing a secret number within an allotted range. It has varying range of difficulties and hints to help assist the user towards selecting the correct secret number.
+- [x] Detail which bugs you found.
+   - Ranges of difficulty did not reflect levels in expecting that they should increase as difficulty increases
+   - Bug in showing hint display in `check_guess` where when a user selects a value above the `secret` value it would present the hint to go higher, vice-versa for when selecting a value below `secret`.
+   - `new_game`bug did not allow the user to start a new game, especially after reaching max range of attempts per difficulty.
+- [x] Explain what fixes you applied.
+   - changed scale of range of values secret can be by refactoring difficulty range in order to account with upper and lower limit.
+   - for `check_guess` changed logic so that the hints were displayed properly and associated to the correct conditionals
+   - Fixed the `new_game` session button to clear `session_state` whenever the button is selected, where before it only updated certain `session_state` values, resulting in deadlock.
+
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+![image of winning guess on game glitch investigator](/scrnli_4eAp2Xv21GtIzi.png)
 
 ## 🚀 Stretch Features
+- [x] Challenge 1: Advanced Edge-Case Testing
 
-- [ ] [If you choose to complete Challenge 4, insert a screenshot of your Enhanced Game UI here]
